@@ -21,9 +21,9 @@ goalBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
     // Retrieve input values and cast numbers
-    let userName = document.getElementById("user-name").value;
-    let dailyGoal = Number(document.getElementById("daily-goal").value);
-    let bonusTasks = Number(document.getElementById("bonus-tasks").value);
+    let userName = document.getElementById("userName").value;
+    let dailyGoal = Number(document.getElementById("dailyGoal").value);
+    let bonusTasks = Number(document.getElementById("bonusTasks").value);
 
     // Call the calculation function
     weeklyGoal(userName, dailyGoal, bonusTasks);
