@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-    <script src="js/script.js" defer></script>
+    <title>Interactive Dashboard</title>
     <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -20,7 +19,25 @@
     <noscript>Unfortunately, your web browser does not support JavaScript.</noscript>
     <div class="container">
       <div class="row">
-        <!-- Dashboard Content -->
+        <!-- Weekly Tasks Section -->
+        <div class="col" id="weekly-tasks">
+          <h2>Weekly Task Goals</h2>
+          <form id="task-form" class="mb-3">
+            <label for="userName" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="userName" >
+            <label for="dailyGoal" class="form-label">Daily Task Goal:</label>
+            <input type="number" class="form-control" id="dailyGoal" >
+            <label for="bonusTasks" class="form-label">Weekly Bonus Tasks:</label>
+            <input type="number" class="form-control" id="bonusTasks" >
+            <button type="submit" class="btn btn-primary" id="goal-btn">Calculate Goal</button>
+          </form>
+
+          <!-- Output message container -->
+          <p id="goal-message" ></p>
+
+          <!-- External JavaScript Link -->
+          <script src="js/task-manager.js"></script>
+        </div>
       </div>
     </div>
   </body>
