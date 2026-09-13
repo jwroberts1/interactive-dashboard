@@ -24,28 +24,28 @@
         <div class="col" id="weekly-tasks">
           <h2>Weekly Task Goals</h2>
           
-          <!-- Carolina Blue applied here with bootstrap padding and rounded corners -->
+          <!-- Carolina Blue background with padding and rounded corners -->
           <form id="task-form" class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
             <div class="mb-2">
-              <label for="userName" class="form-label">Name:</label>
+              <label for="userName" class="form-label" style="font-weight: bold;">Name:</label>
               <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
             </div>
 
             <div class="mb-2">
-              <label for="dailyGoal" class="form-label">Daily Task Goal:</label>
+              <label for="dailyGoal" class="form-label" style="font-weight: bold;">Daily Task Goal:</label>
               <input type="number" class="form-control" id="dailyGoal" min="0" placeholder="e.g. 5" required>
             </div>
 
             <div class="mb-2">
-              <label for="bonusTasks" class="form-label">Weekly Bonus Tasks:</label>
+              <label for="bonusTasks" class="form-label" style="font-weight: bold;">Weekly Bonus Tasks:</label>
               <input type="number" class="form-control" id="bonusTasks" min="0" placeholder="e.g. 2" required>
             </div>
 
             <button type="submit" class="btn btn-dark mt-2" id="goal-btn">Calculate Goal</button>
           </form>
 
-          <!-- Output message container -->
-          <p id="goal-message" class="fw-bold"></p>
+          <!-- Output message styled with Carolina Blue text -->
+          <p id="goal-message" class="fw-bold" style="color: #7BAFD4;"></p>
 
           <!-- External JavaScript Link -->
           <script src="js/task-manager.js"></script>
