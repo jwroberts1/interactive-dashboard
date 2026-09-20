@@ -19,35 +19,73 @@
     <noscript>Unfortunately, your web browser does not support JavaScript.</noscript>
 
     <div class="container mt-4">
-      <div class="row">
+      <div class="row g-4">
         <!-- Weekly Tasks Section -->
-        <div class="col" id="weekly-tasks">
+        <div class="col-12 col-md-6" id="weekly-tasks">
           <h2>Weekly Task Goals</h2>
           
-          <form id="task-form" class="mb-3">
+          <form id="task-form" class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
             <div class="mb-2">
-              <label for="userName" class="form-label">Name:</label>
+              <label for="userName" class="form-label" style="font-weight: bold;">Name:</label>
               <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
             </div>
 
             <div class="mb-2">
-              <label for="dailyGoal" class="form-label">Daily Task Goal:</label>
+              <label for="dailyGoal" class="form-label" style="font-weight: bold;">Daily Task Goal:</label>
               <input type="number" class="form-control" id="dailyGoal" min="0" placeholder="e.g. 5" required>
             </div>
 
             <div class="mb-2">
-              <label for="bonusTasks" class="form-label">Weekly Bonus Tasks:</label>
+              <label for="bonusTasks" class="form-label" style="font-weight: bold;">Weekly Bonus Tasks:</label>
               <input type="number" class="form-control" id="bonusTasks" min="0" placeholder="e.g. 2" required>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-2" id="goal-btn">Calculate Goal</button>
+            <button type="submit" class="btn btn-dark mt-2" id="goal-btn">Calculate Goal</button>
           </form>
 
-          <!-- Output message container -->
-          <p id="goal-message" class="fw-bold"></p>
-
-          <!-- External JavaScript Link -->
+          <p id="goal-message" class="fw-bold" style="color: #7BAFD4;"></p>
           <script src="js/task-manager.js"></script>
+        </div>
+
+        <!-- Metric Converter Section -->
+        <div class="col-12 col-md-6" id="metric-converter">
+          <h2>Imperial/Metric Converter</h2>
+
+          <form id="converter-form" class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
+            <!-- Select list for conversion type -->
+            <div class="mb-2">
+              <label for="conversion-type" class="form-label" style="font-weight: bold;">Select Conversion:</label>
+              <select class="form-select" id="conversion-type" required>
+                <optgroup label="Imperial to Metric">
+                  <option value="1">1. Inches to Centimeters (cm)</option>
+                  <option value="2">2. Feet to Centimeters (cm)</option>
+                  <option value="3">3. Yards to Meters (m)</option>
+                  <option value="4">4. Miles to Kilometers (km)</option>
+                </optgroup>
+                <optgroup label="Metric to Imperial">
+                  <option value="5">5. Centimeters to Inches (in)</option>
+                  <option value="6">6. Centimeters to Feet (ft)</option>
+                  <option value="7">7. Meters to Yards (yd)</option>
+                  <option value="8">8. Kilometers to Miles (mi)</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Input field for numeric value -->
+            <div class="mb-2">
+              <label for="convert-value" class="form-label" style="font-weight: bold;">Value to Convert:</label>
+              <input type="number" step="any" class="form-control" id="convert-value" placeholder="Enter numeric value" required>
+            </div>
+
+            <!-- Action Button -->
+            <button type="submit" class="btn btn-dark mt-2" id="convert-btn">Convert</button>
+          </form>
+
+          <!-- Output placeholder -->
+          <p id="converter-result" class="fw-bold" style="color: #7BAFD4;"></p>
+
+          <!-- Linked Script with defer -->
+          <script defer src="js/metric-converter.js"></script>
         </div>
       </div>
     </div>
