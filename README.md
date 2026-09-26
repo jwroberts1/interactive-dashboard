@@ -151,3 +151,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+## Magic Eight Ball
+The Magic Eight Ball is an interactive fortune-telling widget integrated into the dashboard. Users submit a yes/no question and click the Magic Eight Ball graphic to trigger a randomized answer displayed in the ball's center viewing circle.  It uses an array containing multiple responses and selects an answer at random.  There is a mousedown event on the 8-ball that will evaluate the question and raise an error if no question is entered. I had to make a few changes to the CSS to get the circle to line up correctly on the image. 

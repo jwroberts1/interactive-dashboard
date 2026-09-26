@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/magic-eight-ball.css">
     <title>Interactive Dashboard</title>
     <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -21,7 +22,7 @@
     <div class="container mt-4">
       <div class="row g-4">
         <!-- Weekly Tasks Section -->
-        <div class="col-12 col-md-6" id="weekly-tasks">
+        <div class="col-12 col-md-6 col-lg-4" id="weekly-tasks">
           <h2>Weekly Task Goals</h2>
           
           <form id="task-form" class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
@@ -51,7 +52,7 @@
         </div>
 
         <!-- Metric Converter Section -->
-        <div class="col-12 col-md-6" id="metric-converter">
+        <div class="col-12 col-md-6 col-lg-4" id="metric-converter">
           <h2>Imperial/Metric Converter</h2>
 
           <form id="converter-form" class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
@@ -89,6 +90,22 @@
 
           <!-- Linked Script with defer -->
           <script defer src="js/metric-converter.js"></script>
+        </div>
+
+        <!-- Magic Eight Ball Section -->
+        <div class="col-12 col-md-6 col-lg-4" id="magic-eight-ball">
+          <script src="js/magic-eight-ball.js" defer></script>
+          <h2 class="heading">Magic Eight Ball</h2>
+          <form class="mb-3 p-4 rounded" style="background-color: #7BAFD4;">
+            <p style="font-weight: bold;">Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
+            <input id="question" name="question" class="form-control mb-3" placeholder="Will it rain today?">
+            <div id="magicEightBall" class="text-center my-2">
+              <div id="circle"></div>
+              <img id="ball" src="img/magic-eight-ball.png" alt="Magic Eight Ball" style="cursor: pointer; max-width: 100%;"/>
+            </div>
+            <button id="reset" name="reset" type="reset" class="btn btn-dark mt-3">Ask another question</button>
+          </form>
+          <br>
         </div>
       </div>
     </div>
