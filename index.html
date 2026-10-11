@@ -51,6 +51,18 @@
           <script src="js/task-manager.js"></script>
         </div>
 
+        <div id="task-list" class="mt-4 p-4 rounded" style="background-color: #7BAFD4;">
+            <h3>Weekly Task List</h3>
+            <p style="font-weight: bold;">Enter a task below to manage your goals.</p>
+            <form id="add-task-form" class="mb-3">
+              <div class="mb-2">
+                <label for="task-name" class="form-label" style="font-weight: bold;">Enter task:</label>
+                <input type="text" class="form-control" id="task-name" placeholder="e.g. Complete Lab 7">
+              </div>
+              <button type="button" class="btn btn-dark mt-2" id="add-task">Add Task</button>
+            </form>
+          </div>
+
         <!-- Metric Converter Section -->
         <div class="col-12 col-md-6 col-lg-4" id="metric-converter">
           <h2>Imperial/Metric Converter</h2>
