@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amortization Calculator</title>
+</head>
+<body>
+
+    <p>Name: John Roberts</p>
+    <p>Email: jwroberts1@my.waketech.edu</p>
+    <p>Date: October 18, 2026</p>
+
+    <button id="Button1">Calculate Amortization</button>
+    
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("Button1").addEventListener("click", function() {
+            // Prompt the user for loan amount and term
+            let loanAmount = prompt("Enter the loan amount (without commas):");
+            loanAmount = parseFloat(loanAmount);
+
+            let termYears = prompt("Enter the loan term in years (either 30 or 15):");
+            termYears = parseInt(termYears);
+
+            // Alert if the loan term is not equal to 15 or 30 years
+            if (termYears !== 15 && termYears !== 30) {
+                alert("The loan term must be exactly 15 or 30 years.");
+            } else {
+                let interestRate = 0.0575;
+                let termMonths = termYears * 12;
+
+                // Calculate monthly payment
+                let monthlyPayment = (((interestRate / 12) * loanAmount) / (1 - Math.pow(1 + (interestRate / 12), (termYears * -12)))).toFixed(2);
+                
+                // Calculate total interest and total loan amount
+                let totalInterest = (monthlyPayment * termMonths) - loanAmount;
+                let totalLoan = loanAmount + totalInterest;
+
+                let outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = ""; // Clear output if button is clicked multiple times
+
+                // Print the required information
+                outputDiv.innerHTML += `<p>Monthly Payment: $${monthlyPayment}</p>`;
+                outputDiv.innerHTML += `<p>Mortgage term in years: ${termYears}</p>`;
+                outputDiv.innerHTML += `<p>Mortgage interest rate: 5.75%</p>`;
+                
+                
+                // print
+                outputDiv.innerHTML += `<p>Mortgage amount: $${totalLoan.toFixed(2)}</p>`;
+                outputDiv.innerHTML += `<p>Total interest amount: $${totalInterest.toFixed(2)}</p>`;
+                outputDiv.innerHTML += `<p>Total mortgage amount: $${totalLoan.toFixed(2)}</p>`;
+
+                // Initialize balance
+                let balance = totalLoan;
+
+                // Loop to display the payment amounts and balances
+                for (let i = 1; i <= termMonths; i++) {
+                    balance = balance - monthlyPayment;
+
+                    // Account for floating-point math so the final balance hits exactly 0
+                    if (balance < 0.01) {
+                        balance = 0;
+                    }
+
+                    outputDiv.innerHTML += `<p>Month ${i} - Payment: $${monthlyPayment} | Balance: $${balance.toFixed(2)}</p>`;
+
+                    // If statement to print the required text when balance reaches 0
+                    if (balance === 0) {
+                        outputDiv.innerHTML += `<p>This is the Ending Amortization Calculator...</p>`;
+                        outputDiv.innerHTML += `<p>Ending...</p>`;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
