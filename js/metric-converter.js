@@ -7,9 +7,8 @@ function performConversion(event) {
   var rawValue = document.getElementById("convert-value").value;
   var numericValue = parseFloat(rawValue);
 
-  // Target select element by tag name and get selected option value
-  var selectElements = document.getElementsByTagName("select");
-  var converterSelect = selectElements[0]; // First select on the form
+  // Target select element by its specific ID and get selected option value
+  var converterSelect = document.getElementById("conversion-type");
   var selectedIndex = converterSelect.selectedIndex;
   var selectedConversion = converterSelect.options[selectedIndex].value;
 
