@@ -1,0 +1,17 @@
+#digital-clock {
+    text-align: center;
+    color: #ffffff; /* Sets text color */
+}
+
+#clock-face {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a; /* Distinct color for the time string */
+    margin-bottom: 5px;
+}
+
+#calendar-date {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333333;
+}
